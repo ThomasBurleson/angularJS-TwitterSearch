@@ -1,0 +1,172 @@
+/*@import url(http://fonts.googleapis.com/css?family=Chau+Philomene+One|PT+Mono);*/
+@import url(http://fonts.googleapis.com/css?family=Chau+Philomene+One|PT+Sans+Narrow|Pontano+Sans);
+
+body {
+    background-image: url(/assets/image/linen_gray.jpeg);
+    background-repeat: repeat;
+
+    padding: 0px;
+}
+
+
+#header {
+    padding-top: 11px;
+    padding-bottom:5px;
+   /* overflow: hidden;*/
+    height: 54px;
+    text-align: center;
+
+    background: rgb(235,235,233); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(235,235,233,1) 0%, rgba(176,176,176,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(235,235,233,1)), color-stop(100%,rgba(176,176,176,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(235,235,233,1) 0%,rgba(176,176,176,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(235,235,233,1) 0%,rgba(176,176,176,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(235,235,233,1) 0%,rgba(176,176,176,1) 100%); /* IE10+ */
+    background: linear-gradient(top, rgba(235,235,233,1) 0%,rgba(176,176,176,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebe9', endColorstr='#b0b0b0',GradientType=0 ); /* IE6-9 */
+
+    border-bottom: solid #3a3a44 1px;
+}
+
+#application {
+    float:right;
+    padding-right:30px;
+}
+
+h1 {
+    text-align: left;
+    vertical-align: middle;
+    background: url('/assets/image/read.png') -8px -7px no-repeat;
+    padding-top: 3px;
+    padding-bottom: 10px;
+    margin-left: 40px;
+    padding-left: 55px;
+}
+h1 > input {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.7em;
+    text-align: center;
+    color : #08C;
+    margin-left: 10px;
+}
+div.btns {
+    position: absolute;
+    top: 8px;
+    right: 388px;
+}
+
+
+input[type="checkbox"] {
+  margin: 15px 3px;
+}
+​
+
+
+#tweets {
+    background-color: #333;
+}
+
+#tweets div.tweet {
+    border-top: solid #535252 1px;
+    border-bottom: solid #3a3a44 1px;
+    padding: 0.7em;
+    font-family: 'Chau Philomene One', sans-serif;
+    height: 58px;
+    background: -moz-linear-gradient(top, rgba(58,58,68,0.89) 0%, rgba(54,54,64,0.89) 3%, rgba(49,49,59,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(58,58,68,0.89)), color-stop(3%,rgba(54,54,64,0.89)), color-stop(100%,rgba(49,49,59,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(58,58,68,0.89) 0%,rgba(54,54,64,0.89) 3%,rgba(49,49,59,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(58,58,68,0.89) 0%,rgba(54,54,64,0.89) 3%,rgba(49,49,59,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(58,58,68,0.89) 0%,rgba(54,54,64,0.89) 3%,rgba(49,49,59,1) 100%); /* IE10+ */
+    background: linear-gradient(top, rgba(58,58,68,0.89) 0%,rgba(54,54,64,0.89) 3%,rgba(49,49,59,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e33a3a44', endColorstr='#31313b',GradientType=0 ); /* IE6-9 */
+}
+
+#tweets div.tweet.active {
+    background: -moz-linear-gradient(top,  rgba(21,21,21,0.89) 0%, rgba(30,30,30,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(21,21,21,0.89)), color-stop(100%,rgba(30,30,30,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(21,21,21,0.89) 0%,rgba(30,30,30,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(21,21,21,0.89) 0%,rgba(30,30,30,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(21,21,21,0.89) 0%,rgba(30,30,30,1) 100%); /* IE10+ */
+    background: linear-gradient(top,  rgba(21,21,21,0.89) 0%,rgba(30,30,30,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3151515', endColorstr='#1e1e1e',GradientType=0 ); /* IE6-9 */
+}
+
+#tweets div.tweet:last-child {
+    border-bottom: none;
+}
+
+
+#tweets div.tweet p {
+    margin: 0.2em;
+    padding: 0;
+    color: #c9cfdb;
+    font-family: 'Pontano Sans', sans-serif;
+    font-size: 1.4em;
+}
+#tweets div.tweet p.user {
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color : #fff4f0;
+    font-size: 1.8em;
+}
+#tweets div.tweet p.user span.userid {
+    font-weight: normal;
+    color: #fd9639;
+    padding-left: 0.5em;
+    font-family: 'Basic', sans-serif;
+    font-size: 12px;
+}
+#tweets div.tweet p.date {
+    float: right;
+    font-size: 0.7em;
+    color: grey;
+}
+​
+#tweets .avatar-frame{float: left; margin-right:10px; padding:0px; border: 2px solid #3a3a44;}
+#tweets .avatar-frame,.avatar-frame img {
+width: 50px;
+height: 50px;
+-webkit-border-radius: 10px; /* Saf3+, Chrome */
+border-radius: 10px; /* Opera 10.5, IE 9 */
+/*-moz-border-radius: 30px; Disabled for FF1+ */
+float: left;
+margin-right: 14px;
+}
+
+
+img#img-spinner {
+    visibility: hidden;
+    margin-right: 10px;
+}
+img#img-spinner.active {
+    visibility: visible;
+}
+
+
+#filters {
+    padding-top: 6px;
+    text-align: center;
+    border-bottom: 2px solid #333;
+}
+
+#filters > button {
+    float:right;
+    margin-right: 15px;
+    margin-top: 3px;
+}
+
+.hint {
+    position:absolute;
+    font-size: .3em;
+    color: #666;
+    margin-top: -10px;
+    padding-left: 5px;
+}
+
+.tweetCount {
+    position:absolute;
+    color: #666;
+    top: 47px;
+    left: 57px;
+    font-size: .8em;
+}

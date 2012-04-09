@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html class="x-border-box">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Twitter AngularJS</title>
+
+		<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/assets/css/tweets.css" rel="stylesheet">
+
+	</head>
+
+	<body>
+
+		<div ng-app="Twitter" ng-controller="SearchController">
+
+			<!-- Header bar with query field -->
+			<div id="header">
+				<form ng:submit="doSearch(query)">
+					<img id="application" src="/assets/image/tweetbird.png" />
+					<span class="tweetCount" ng-show="tweets.length">{{tweets.length}}</span>
+
+					<h1>
+						Latest tweets about
+						<input class="input-xlarge focused" ng-model="query"/>
+						<img  id="img-spinner"
+									ng-class="searching && 'active' "
+									src="assets/image/spinner2.gif" alt="Loading"/>
+
+						<div class="btns">
+							<a class="btn btn-success" ng-click="doSearch(query)" ng-hide="canRefresh()">
+								<i class="icon-search"></i> &nbsp;Search
+							</a>
+							<a class="btn btn-success" ng-click="doSearch(query)" ng-show="canRefresh()">
+								<i class="icon-refresh"></i> &nbsp;Refresh
+							</a>
+							<a class="btn btn-info filter" ng-click="filters.visible = !filters.visible && tweets.length">
+								<i class="icon-tags"></i> &nbsp;Filters
+							</a>
+
+							<span class="hint" ng-show="canRefresh()">auto refresh {{countDown}} secs</span>
+						</div>
+					</h1>
+				</form>
+			</div>
+
+			<!-- List Filters -->
+			<div id="filters" ng-hide="!filters.visible" ng-cloak >
+					<input 	ng-model="filters.any" placeholder="Any text"/>
+					<input 	ng-model="filters.from" placeholder="User name"/>
+					<input 	ng-model="filters.text" placeholder="Tweet text"/>
+					&nbsp;&nbsp;
+					<input 	ng-model="filters.caseSensitive"
+									type="checkbox"
+									class="filter" >
+							Case-sensitive Filters
+					</input>
+
+					<button class="btn btn-warning"
+									ng-click="filters.clear()"
+									ng-show="hasFilters()">
+										Clear Filters
+					</button>
+			</div>
+
+			<!-- Tweet List (query results) -->
+			<div id="tweets" ng-show="tweets.length" ng-cloak >
+					<div class="tweet"
+							 ng-class="tweet.isSelected && 'active'"
+							 ng-click="selectTweet(tweet)"
+							 ng-repeat="tweet in tweets | filter:filters.msgFilter | filter:filters.fromFilter | filter:filters.any"
+							 >
+
+									<div class="avatar-frame">
+										<img ng-src="{{tweet.profile_image_url}}" class="avatar avatar-60 photo" height="60" width="60"/>
+									</div>
+
+
+									<p class="date">{{tweet.date | date:'dd/MM/yyyy - hh:mm'}}</p>
+									<p class="user">{{tweet.from_user_name}}
+													<span class="userid">@{{tweet.from_user}}</span>
+									</p>
+									<p class="text" ng-bind-html="tweet.text | linky" />
+					</div>
+			</div>
+		</div>
+		​
+		<!-- Move to footer for faster page rendering -->
+		<script type="text/javascript" src="/assets/js/lib/load.js"></script>
+		<script type="text/javascript" src="/assets/js/bootstrap.js"></script>
+
+	</body>
+
+</html>

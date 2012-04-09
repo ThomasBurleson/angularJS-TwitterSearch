@@ -1,0 +1,70 @@
+{ exec } = require 'child_process'
+
+SRC_LESS      = "../src/less"
+SRC_CS        = "../src/coffee"
+DEPLOY_CSS    = "../webroot/traverse/assets/css"
+DEPLOY_JS     = "../webroot/traverse/assets/js"
+
+DEFT_BUILD    = "../webroot/traverse/assets/js/lib/deft/build"
+DEFT_SRC      = "../webroot/traverse/assets/js/lib/deft/src/coffee/Deft"
+DEFT_JS       = "../webroot/traverse/assets/js/lib/deft/src/js/Deft"
+DEFT_JOIN     = "../webroot/traverse/assets/js/lib/deft/src/js/Deft/deft-all.js"
+DEFT_LIB      = "#{DEFT_BUILD}/deft-all.js"
+
+# TODO: Remove - temporarily added until next build of coffee-script is released.
+TOOLS = "/usr/local/bin"
+
+
+# -------------------------------------------------------------
+# Compile Coffeescript to Javascript
+# -------------------------------------------------------------
+
+task "watch", "Compiles Coffescript to JavaScript... no joins or minifications", ->
+
+	#
+	# Build single-file Traverse application engine
+	#
+	console.log "Compiling Traverse classes"
+	exec "mkdir #{DEPLOY_JS}"
+	exec "#{ TOOLS }/coffee -o #{ DEPLOY_JS } -wc #{ SRC_CS }/coffee", ( error, stdout, stderr ) ->
+		console.log stdout + stderr if stdout or stderr
+		if error
+			throw error
+
+
+task "build", "Compiles Coffescript & Less... no joins or minifications", ->
+	#
+	# Build single-file Traverse application engine
+	#
+	console.log "Compiling Traverse classes"
+	exec "#{ TOOLS }/coffee -o #{ DEPLOY_JS }  -c #{ SRC_CS }", ( error, stdout, stderr ) ->
+		console.log stdout + stderr if stdout or stderr
+		if error
+			throw error
+
+	###
+	console.log "Compiling DeftJS classes"
+	exec "#{ TOOLS }/coffee -o #{ DEFT_JS }  -c #{ DEFT_SRC }", ( error, stdout, stderr ) ->
+		console.log stdout + stderr if stdout or stderr
+		if error
+			throw error
+		else
+			exec "#{ TOOLS }/coffee --join #{ DEFT_LIB } --output #{ DEFT_JS } --compile #{ DEFT_SRC }/log  #{ DEFT_SRC }/ioc #{ DEFT_SRC }/mvc #{ DEFT_SRC }/mixin #{ DEFT_SRC }/promise #{ DEFT_SRC }/util #{ DEFT_SRC }/overrides" , ( error, stdout, stderr ) ->
+				console.log stdout + stderr if stdout or stderr
+				if error
+					throw error
+				else
+					exec "cp  #{ DEFT_JOIN } #{ DEFT_LIB }"
+					exec "rm #{ DEFT_JOIN }"
+	###
+
+	#
+	# Build Traverse CSS from LessCss scripts
+	#
+	console.log "Compiling #{ DEPLOY_CSS }/traverse.css"
+	exec "#{ TOOLS }/lessc #{ SRC_LESS }/traverse.less > #{ DEPLOY_CSS }/traverse.css
+	", ( error, stdout, stderr ) ->
+			console.log stdout + stderr if stdout or stderr
+			if error
+				throw error
+

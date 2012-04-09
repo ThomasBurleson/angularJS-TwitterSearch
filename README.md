@@ -34,9 +34,9 @@ the specified `<div />` and its DOM descendants.
 In this implementation the $resource is not used; rather the $http service and its support for `promises` is used to transform the data before the controller or the views are notified.
 Notice how closures are used to publish a custom `$twitter` service with a single API: `search()`.
 
-A `TwitterSearch()` constructor function configures the angular app module and builds the custom $titter service (that is injected into the controller). Because the tweets.html has `<div ng-app="Twitter" >`, we must create a module `Twitter`. Notice how the cross-domain, JSONP call promise handler intercepts and transforms the data prior to delivery to the controller.
+A `TwitterSearch()` constructor function configures the angular app module and builds the custom $twitter service (that is injected into the controller). Because the TwitterSearch.html has `<div ng-app="Twitter" >`, we must create a module `Twitter`. Notice how the cross-domain, JSONP call promise handler intercepts and transforms the data prior to delivery to the controller.
 
-Look at the tweets.html to see how we use the AngularJS directives:
+Look at the TwitterSearch.html to see how we use the AngularJS directives:
 
 *  ng-hide
 *  ng-show

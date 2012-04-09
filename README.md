@@ -6,6 +6,10 @@ the project improves upon that excellent initial effort.
 
 ![Screenshot](https://github.com/ThomasBurleson/angularJS-TwitterSearch/raw/master/webroot/assets/image/snaps/tweetsearch_app.png)<br/>
 
+
+<br/>
+!! [TwitterSearch](http://jsfiddle.net/ThomasBurleson/8Gzj9/) is also live on jsFiddle.net.
+
 ---
 
 This implementation improves upon the original with the following features:

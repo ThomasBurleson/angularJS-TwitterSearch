@@ -52,7 +52,7 @@ h1 > input {
 div.btns {
     position: absolute;
     top: 8px;
-    right: 388px;
+    left: 60%;
 }
 
 
@@ -118,8 +118,11 @@ input[type="checkbox"] {
 }
 #tweets div.tweet p.date {
     float: right;
-    font-size: 0.7em;
-    color: grey;
+    margin-right: 20px;
+    padding-top:4px;
+    font-family: 'Montserrat', sans-serif;
+    color : #969BA0;
+    font-size:0.9em;
 }
 ​
 #tweets .avatar-frame{float: left; margin-right:10px; padding:0px; border: 2px solid #3a3a44;}

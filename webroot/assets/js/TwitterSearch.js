@@ -56,7 +56,7 @@
 
               // parse data items and format post dates
               var data = response.data.results;
-              for (var i = 0; i < data; i++)
+              for (var i = 0; i < data.length; i++)
               {
                 data[i].date = Date.parse(data[i].created_at);
               }

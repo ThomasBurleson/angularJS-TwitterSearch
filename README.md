@@ -27,6 +27,14 @@ This implementation improves upon the original with the following features:
 *  and more...
 
 ----
+This Twitter search applicaiton demonstrates the very amazing aspects of AngularJS: injection and databinding.
+
+A  different version of TwitterSearch directly uses `$resource` instead of `$http`. `$resource.get()` actually returns an empty object { } while the asynchronous request is pending. The directive `ng-repeat='tweet in twitterResult.results` actually places databinding on the express and `twitterResult.results`.
+When the asynch response is received, $resource UPDATES the properties of the empty object { } with the response; which triggers databinding to process the ng-repeat directive.
+
+Now truth be told, $resource actually uses $http under the hood. And $http uses promises [AngularJS provides a promise/deferred implementation inspired by [Kris Kowal's Q](https://github.com/kriskowal/q)]. So when the $resource promise resolves, then the emtpy object { } is updated. It is the use of databinding that is so amazingly magical in AngularJS; plus promises and injection. While that solution uses `$resource`, another this oneuses $http with promises to create a <a href="http://jsfiddle.net/ThomasBurleson/8Gzj9/" >AngularJS Twitter</a> example.
+
+----
 
 Because TwitterSearch.html uses `<div ng-controller="SearchController">` AngularJS will attempt to instantiate and scope a `SearchController` instance for
 the specified `<div />` and its DOM descendants.

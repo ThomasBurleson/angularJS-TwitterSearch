@@ -87,6 +87,9 @@ function SearchController($scope, $twitter, $log, $rootScope)
 
 	};
 
+	$scope.showFilters = function () {
+		$('#filters').slideToggle();
+	}
 	/**
 	 *	Submit query request to Twitter online service
 	 *

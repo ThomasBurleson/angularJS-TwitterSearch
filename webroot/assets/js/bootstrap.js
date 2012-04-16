@@ -11,6 +11,7 @@
  (function() {
 
   head.js(
+    // { boostrap  : "/assets/js/lib/jquery/bootstrap/js/bootstrap.js" },
     { jquery    : "/assets/js/lib/jquery/jquery.min.js",             size: "93876"},
     { angular   : "/assets/js/lib/angular/angular.js",               size: "471349"},
     // { resources : "/assets/js/lib/angular/angular-resource.js",      size: "15782"},

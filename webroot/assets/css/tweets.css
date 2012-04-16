@@ -1,5 +1,6 @@
 /*@import url(http://fonts.googleapis.com/css?family=Chau+Philomene+One|PT+Mono);*/
 @import url(http://fonts.googleapis.com/css?family=Chau+Philomene+One|PT+Sans+Narrow|Pontano+Sans);
+@charset "UTF-8";
 
 body {
     background-image: url(/assets/image/linen_gray.jpeg);
@@ -9,11 +10,19 @@ body {
 }
 
 
+[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak {
+    display:none;
+}
+ng\:form {
+    display:block;
+}
+
 #header {
     padding-top: 11px;
     padding-bottom:5px;
    /* overflow: hidden;*/
     height: 54px;
+    width:100%;
     text-align: center;
 
     background: rgb(235,235,233); /* Old browsers */
@@ -28,7 +37,7 @@ body {
     border-bottom: solid #3a3a44 1px;
 }
 
-#application {
+#header #application {
     float:right;
     padding-right:30px;
 }
@@ -41,6 +50,7 @@ h1 {
     padding-bottom: 10px;
     margin-left: 40px;
     padding-left: 55px;
+    width:80%;
 }
 h1 > input {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -48,11 +58,12 @@ h1 > input {
     text-align: center;
     color : #08C;
     margin-left: 10px;
+    width:60%;
 }
 div.btns {
     position: absolute;
     top: 8px;
-    left: 60%;
+    right: 10%;
 }
 
 
@@ -60,7 +71,6 @@ input[type="checkbox"] {
   margin: 15px 3px;
 }
 ​
-
 
 #tweets {
     background-color: #333;
@@ -145,11 +155,18 @@ img#img-spinner.active {
     visibility: visible;
 }
 
-
 #filters {
+    height: auto;
+    overflow: hidden;
+    display:none;
+}
+
+#filters > #content {
     padding-top: 6px;
     text-align: center;
     border-bottom: 2px solid #333;
+    height: auto;
+    overflow: hidden;
 }
 
 #filters > button {
@@ -173,3 +190,9 @@ img#img-spinner.active {
     left: 57px;
     font-size: .8em;
 }
+
+
+h1 > input {
+    width: 35%;
+}
+

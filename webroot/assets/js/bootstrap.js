@@ -12,17 +12,18 @@
 
   head.js(
     // { boostrap  : "/assets/js/lib/jquery/bootstrap/js/bootstrap.js" },
-    { jquery    : "/assets/js/lib/jquery/jquery.min.js",             size: "93876"},
-    { angular   : "/assets/js/lib/angular/angular.js",               size: "471349"},
-    // { resources : "/assets/js/lib/angular/angular-resource.js",      size: "15782"},
-    { search    : "/assets/js/SearchController.js"                       },
-    { app       : "/assets/js/TwitterSearch.js"                           }
+    { jquery    : "/assets/js/lib/jquery/jquery.min.js",                size: "93876"   },
+    { angular   : "/assets/js/lib/angular/angular.js",                  size: "473234"  },
+    { sanitize  : "/assets/js/lib/angular/angular-sanitize.js",          size: "17359"   },
+    // { resources : "/assets/js/lib/angular/angular-resource.js",      size: "15782"   },
+    { app       : "/assets/js/Twitter.js"                                               },
+    { search    : "/assets/js/SearchController.js"                                      }
 
   )
   .ready("ALL", function() {
 
     // Start the main application
-    TwitterSearch();
+    angular.module("TwitterSearch", ["ngSanitize", "TwitterServices"] );
 
   });
 

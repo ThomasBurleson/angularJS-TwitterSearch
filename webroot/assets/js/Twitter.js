@@ -47,28 +47,29 @@
          * search() responds with promise instance
          * Intercept the initial response to parse the data items
          */
-        search: function(searchTerm, lastID) {
+        search: function ( searchTerm, lastID ) { 
           var params = '&q=' + searchTerm + (lastID ? '&since_id='+lastID : '');
           //$log.log( params );
 
           // return a promise
-          return $http.jsonp( url + params ).then( function(response) {
-
-            // parse data items and format post dates
-            var data = response.data.results;
-            for (var i = 0; i < data.length; i++)
-            {
-              data[i].date = Date.parse(data[i].created_at);
-            }
-
-            // Build special response
-            return {
-                items       : data,
-                refreshURL  : response.data.refresh_url,
-                query       : response.data.query
-            };
-
-          });
+          return $http.jsonp( url + params )
+                      .then( function(response) { 
+                       
+                         // parse data items and format post dates
+                         var data = response.data.results;
+                         for (var i = 0; i < data.length; i++)
+                         {
+                           data[i].date = Date.parse(data[i].created_at);
+                         }
+             
+                         // Build special response
+                         return {
+                             items       : data,
+                             refreshURL  : response.data.refresh_url,
+                             query       : response.data.query
+                         };
+             
+                       });
         }
       };
 

@@ -55,7 +55,9 @@
           return $http.jsonp( url + params )
                       .then( function(response) { 
                        
-                         // parse data items and format post dates
+                         // intercpet the response to parse the data items 
+                         // and format post dates
+                         
                          var data = response.data.results;
                          for (var i = 0; i < data.length; i++)
                          {

@@ -5,8 +5,8 @@
 		<meta charset="utf-8">
 		<title>Twitter AngularJS</title>
 
-		<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-		<link href="/assets/css/tweets.css" rel="stylesheet">
+		<link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="./assets/css/tweets.css" rel="stylesheet">
 
 	</head>
 
@@ -17,7 +17,7 @@
 			<!-- Header bar with query field -->
 			<div id="header">
 				<form ng:submit="doSearch(query)">
-					<img id="application" src="/assets/image/tweetbird.png" />
+					<img id="application" src="./assets/image/tweetbird.png" />
 					<span class="tweetCount" ng-show="tweets.length">{{tweets.length}}</span>
 
 					<h1>
@@ -25,7 +25,7 @@
 						<input class="input-xlarge focused" ng-model="query"/>
 						<img  id="img-spinner"
 									ng-class="searching && 'active' "
-									src="assets/image/spinner2.gif" alt="Loading"/>
+									src="./assets/image/spinner2.gif" alt="Loading"/>
 
 						<div class="btns">
 							<a class="btn btn-success" ng-click="doSearch(query)" ng-hide="canRefresh()">
@@ -88,8 +88,8 @@
 		</div>
 		​
 		<!-- Move to footer for faster page rendering -->
-		<script type="text/javascript" src="/assets/js/lib/load.js"></script>
-		<script type="text/javascript" src="/assets/js/bootstrap.js"></script>
+		<script type="text/javascript" src="./assets/js/lib/load.js"></script>
+		<script type="text/javascript" src="./assets/js/bootstrap.js"></script>
 
 	</body>
 

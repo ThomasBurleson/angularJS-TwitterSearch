@@ -3,7 +3,7 @@
 @charset "UTF-8";
 
 body {
-    background-image: url(/assets/image/linen_gray.jpeg);
+    background-image: url(./assets/image/linen_gray.jpeg);
     background-repeat: repeat;
 
     padding: 0px;
